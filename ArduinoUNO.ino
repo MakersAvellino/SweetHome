@@ -34,41 +34,49 @@ void loop() {
     Serial.println("Studio: "   + (String)statoStudio);
   }
 
-  if (lettera == 'A') {
+ switch (lettera) {
+  case 'A':
+    // you clicked on "Entrata" room button, if state was ON this click made it OFF and viceversa.
     lettera=' ';
     digitalWrite( pinEntrata, !digitalRead(pinEntrata) );
     Serial.println("Stato Entrata: " + (String) digitalRead(pinEntrata));
     Serial.flush();
-  }
-
-  if (lettera == 'B') {
+    break;
+      
+  case 'B':
+    // you clicked on "Cucina" room button, if state was ON this click made it OFF and viceversa.
     lettera=' ';
     digitalWrite( pinCucina, !digitalRead(pinCucina) );
     Serial.println("Stato Cucina: " + (String) digitalRead(pinCucina));
     Serial.flush();
-  }
-
-
-  if (lettera == 'C') {
+    break;
+      
+  case 'C':
+    // you clicked on "Stanza" room button, if state was ON this click made it OFF and viceversa.
     lettera=' ';
     digitalWrite( pinStanza, !digitalRead(pinStanza) );
     Serial.println("Stato Stanza: " + (String) digitalRead(pinStanza));
     Serial.flush();
-  }
-
-
-  if (lettera == 'D') {
+    break;
+      
+  case 'D':
+    // you clicked on "Soffitta" room button, if state was ON this click made it OFF and viceversa.
     lettera=' ';
     digitalWrite( pinSoffitta, !digitalRead(pinSoffitta) );
     Serial.println("Stato Soffitta: " + (String) digitalRead(pinSoffitta));
     Serial.flush();
-  }
-
-
-  if (lettera == 'E') {
+    break;
+      
+  case 'E':
+    // you clicked on "Studio" room button, if state was ON this click made it OFF and viceversa.
     lettera=' ';
     digitalWrite( pinStudio, !digitalRead(pinStudio) );
     Serial.println("Stato Studio: " + (String) digitalRead(pinStudio));
     Serial.flush();
-  }
+    break;
+      
+  default:
+    Serial.println("Error: Wrong letter state");
+    break;
+ }
 }
