@@ -5,11 +5,21 @@ int  statoStanza   = 0;
 int  statoSoffitta = 0;
 int  statoStudio   = 0;
 
-const int pinSoffitta =  9;
-const int pinStanza   = 12;
-const int pinEntrata  = 10;
-const int pinStudio   = 11;
-const int pinCucina   =  8;
+const int pinSoffitta =  9;                                         // Declare room-pin association.
+const int pinStanza   = 12;                                         // Declare room-pin association.
+const int pinEntrata  = 10;                                         // Declare room-pin association.
+const int pinStudio   = 11;                                         // Declare room-pin association.
+const int pinCucina   =  8;                                         // Declare room-pin association.
+/* changes to try ***
+import countable.h
+import hashmap.h
+
+CreateHashMap (room, char *, int, 3);
+room ["Kitchen"] =  8;
+room ["Bedroom"] = 12;
+room ["Attic"]   =  9;
+*/
+
 
 void setup() {
   // put your setup code here, to run once:
@@ -22,8 +32,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
   while (Serial.available() > 0) {
     lettera = Serial.read();
     Serial.println(lettera);
